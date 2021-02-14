@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/account.css') }}">
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container p-0">
+        <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <div class="card hovercard">
+                    <div class="cardheader">
+                    </div>
+                    <div class="avatar">
+                        <img alt="" src="http://lorempixel.com/100/100/people/9/">
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            <a target="_blank" href="https://scripteden.com/">Script Eden</a>
+                        </div>
+                        <div class="desc">Passionate designer</div>
+                        <div class="desc">Curious developer</div>
+                        <div class="desc">Tech geek</div>
+                    </div>
+                    <div class="bottom">
+                        <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a class="btn btn-danger btn-sm" rel="publisher"
+                           href="https://plus.google.com/+ahmshahnuralam">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                        <a class="btn btn-primary btn-sm" rel="publisher"
+                           href="https://plus.google.com/shahnuralam">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item" aria-current="true">Edit account</li>
+                  <li class="list-group-item">Posts</li>
+                  <li class="list-group-item">Friends</li>
+                  <li class="list-group-item">Followers</li>
+                  <li class="list-group-item">Activities</li>
+                  <li class="list-group-item">Delete account</li>
+                </ul>
+            </div>
+            <div class="col-lg-8 pr-2 pl-2">
+                <div class="[ panel panel-default ] panel-google-plus">
+                    <div class="dropdown">
+                        <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                            <span class="[ glyphicon glyphicon-chevron-down ]"></span>
+                        </span>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-google-plus-tags">
+                        <ul>
+                            <li>#Millennials</li>
+                            <li>#Generation</li>
+                        </ul>
+                    </div>
+                    <div class="panel-heading">
+                        <img class="[ img-circle pull-left ]" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" alt="Mouse0270" />
+                        <h3>Robert McIntosh</h3>
+                        <h5><span>Shared publicly</span> - <span>Jun 27, 2014</span> </h5>
+                    </div>
+                    <div class="panel-body">
+                        <p>Do people born in 2000 get to choose if they are Generation Y or Generation Z? How do you decide what generation you want to belong to?</p>
+                    </div>
+                    <div class="panel-footer">
+                        <button type="button" class="[ btn btn-default ]">+1</button>
+                        <button type="button" class="[ btn btn-default ]">
+                            <span class="[ glyphicon glyphicon-share-alt ]"></span>
+                        </button>
+                        <div class="input-placeholder">Add a comment...</div>
+                    </div>
+                    <div class="panel-google-plus-comment">
+                        <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" />
+                        <div class="panel-google-plus-textarea">
+                            <textarea rows="4"></textarea>
+                            <button type="submit" class="[ btn btn-success disabled ]">Post comment</button>
+                            <button type="reset" class="[ btn btn-default ]">Cancel</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock content%}
+<script src="{{ url_for('static', filename='js/account.js') }}"></script>
