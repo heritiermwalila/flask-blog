@@ -25,5 +25,6 @@ share/python-wheels/
 .installed.cfg
 *.egg
 .idea
+*.db
 MANIFEST
 

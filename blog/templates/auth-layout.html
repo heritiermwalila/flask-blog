@@ -31,10 +31,10 @@
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Sign in</a>
+                    <a class="nav-link" href="{{ url_for('login') }}">Sign in</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
+                    <a class="nav-link" href="{{ url_for('register') }}">Register</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
@@ -55,27 +55,22 @@
     </nav>
     <div class="container mt-4">
         <div class="row">
-            <div class="col-md-9">
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            <div class="alert alert-{{ category }}">
-                                <span>{{ message }}</span>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-                {% block content %}{% endblock %}
-            </div>
-            <div class="col-md-3">
-                <div class="list-group">
-                    <a href="#" class="list-group-item active"><i class="fa fa-key"></i> <span>Categories</span></a>
-                    <a href="#" class="list-group-item"><i class="fa fa-credit-card"></i> <span>Billing</span></a>
-                    <a href="#" class="list-group-item"><i class="fa fa-question-circle"></i> <span>Support</span></a>
-                    <a href="#" class="list-group-item"><i class="fa fa-arrow-circle-o-left"></i> <span>Sandbox Account</span></a>
-                    <a href="#" class="list-group-item"><i class="fa fa-book"></i> <span>QuickStart Overview</span></a>
-                    <a href="#" class="list-group-item"><i class="fa fa-compass"></i> <span>Documentation</span></a>
-                  </div>
+            <div class="col-md-12">
+                <div class="row justify-content-center">
+                    <div class="col-md-5 pl-0 pr-0">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    <div class="alert alert-{{ category }} mb-0 text-center">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+                </div>
+
+            {% block content %}{% endblock %}
             </div>
         </div>
     </div>

@@ -1,11 +1,7 @@
-from flask import Flask, render_template, flash, redirect, url_for
-from forms import RegisterForm, LoginForm
-from time import sleep
+from flask import render_template, redirect, flash, url_for
+from blog import app
+from blog.forms import LoginForm, RegisterForm
 
-app = Flask(__name__)
-
-
-app.config['SECRET_KEY'] = '653224d654b7d9f90d5c7764acb3ca44'
 
 @app.after_request
 def add_header(r):
@@ -30,15 +26,24 @@ def about_us():
     return render_template('about-us.html')
 
 
+@app.route('/news')
+def news():
+    return render_template("news.html", title="News")
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
 
     if form.validate_on_submit():
-
-        return redirect(url_for('home'))
+        if form.email.data == 'admin@blog.com' and form.password.data == 'password':
+            flash("You have successfully logged in", 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('Invalid email or password', 'danger')
 
     return render_template('login.html', form=form, title="Account login")
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -49,7 +54,3 @@ def register():
         return redirect(url_for('home'))
 
     return render_template('register.html', title='Register', form=form)
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
